@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:Reference
+		Uri="https://webidecp-s0020167714trial.dispatcher.hanatrial.ondemand.com/destinations/D05/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value"
+		xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx"><edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/></edmx:Reference>
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="Z_JING_C_SOITEM_CDS" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Z_JING_C_SOITEMType" sap:semantics="aggregate" sap:label="EPM Sales Order Item test by jing" sap:content-version="1">
+				<Key><PropertyRef Name="ID"/></Key><Property Name="ID" Type="Edm.String" Nullable="false"/><Property Name="SalesOrderID" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Sales Order ID"/><Property Name="TargetCurrency" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:semantics="currency-code"/><Property Name="ConvertedGrossAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:aggregation-role="measure" sap:unit="TargetCurrency"
+					sap:filterable="false"/><Property Name="ItemPosition" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Item Position"/><Property Name="CompanyName" Type="Edm.String" MaxLength="80" sap:aggregation-role="dimension" sap:label="Company"/><Property Name="Product" Type="Edm.String" MaxLength="10" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="Product ID"/><Property Name="CurrencyCode" Type="Edm.String" MaxLength="5" sap:aggregation-role="dimension" sap:label="Currency Code"
+					sap:semantics="currency-code"/><Property Name="GrossAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:aggregation-role="measure" sap:unit="CurrencyCode"
+					sap:label="Gross Amount" sap:filterable="false"/><Property Name="NetAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:aggregation-role="measure" sap:unit="CurrencyCode"
+					sap:label="Net Amount" sap:filterable="false"/><Property Name="TaxAmount" Type="Edm.Decimal" Precision="16" Scale="3" sap:aggregation-role="measure" sap:unit="CurrencyCode"
+					sap:label="Tax Amount" sap:filterable="false"/><Property Name="ProductAvailabilityStatus" Type="Edm.String" MaxLength="1" sap:aggregation-role="dimension" sap:display-format="UpperCase"
+					sap:label="ATP Status"/></EntityType>
+			<EntityContainer Name="Z_JING_C_SOITEM_CDS_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="Z_JING_C_SOITEM" EntityType="Z_JING_C_SOITEM_CDS.Z_JING_C_SOITEMType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:searchable="true" sap:content-version="1"/></EntityContainer><atom:link rel="self"
+				href="https://webidecp-s0020167714trial.dispatcher.hanatrial.ondemand.com/destinations/D05/sap/opu/odata/sap/Z_JING_C_SOITEM_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/><atom:link rel="latest-version"
+				href="https://webidecp-s0020167714trial.dispatcher.hanatrial.ondemand.com/destinations/D05/sap/opu/odata/sap/Z_JING_C_SOITEM_CDS/$metadata"
+				xmlns:atom="http://www.w3.org/2005/Atom"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>
